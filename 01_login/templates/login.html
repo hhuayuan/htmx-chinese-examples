@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="static/htmx.min.js"></script>
+    <title>HTMX Login Example</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .login {
+            width: 300px;
+            height: 260px;
+            margin-top: 200px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login h1 {
+            margin: 0 0 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .login input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing:border-box;
+        }
+
+        .login button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .login button:hover {
+            background-color: #0056b3;
+        }
+
+        .login .error {
+            line-height: 1em;
+            color: #f00;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <h1>Login</h1>
+        <!-- 两个 input 都加了required，并且监听了hx-on:change事件 -->
+        <input type="text" id="username" name="username" placeholder="Username" required hx-on:change="clean_error(event)">
+        <div id="username-error" class="error"></div>
+        <input type="password" id="password" name="password" placeholder="Password" required hx-on:change="clean_error(event)">
+        <div id="password-error" class="error"></div>
+        <button type="button" 
+            hx-post="login" 
+            hx-include="#username,#password" 
+            hx-validate="true"
+            hx-on:htmx:validation:halted="validation_error(event);" 
+            hx-on:htmx:response-error="bad_request(event);"
+        >Login</button>
+        <div id="error" class="error"></div>
+    </div>
+</body>
+<script>
+    // 用户重新输入时清除H5验证错误提示
+    function clean_error(event) {
+        const elts = htmx.findAll('[id$="-error"]');
+        if(!elts) return;
+        elts.forEach(elt => {
+            elt.innerHTML = '';
+        });
+    }
+    // H5验证失败时触发 hx-on:htmx:validation:halted
+    function validation_error(event) {
+        event.detail.errors.forEach(err => {
+            const elt = htmx.find(`#${err.elt.id}-error`);
+            if(elt){
+                elt.innerHTML = err.message;
+            }
+        });
+
+    }
+    // 服务器返回400时触发 hx-on:htmx:responseError
+    function bad_request(event) {
+        const elt = htmx.find('#error');
+        if(elt){
+            elt.innerHTML = event.detail.xhr.response;
+        }
+    }
+</script>
+</html>
