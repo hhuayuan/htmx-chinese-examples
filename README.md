@@ -15,7 +15,9 @@
 
 ## 示例内容
 
-- htmx实现用户登录重定向及错误处理
+| 内容 | GitHub仓库 | 图文说明 |
+| :--- | :--- | :--- |
+| htmx实现用户登录：完整的动态交互 | [GitHub仓库](https://github.com/hhuayuan/htmx-chinese-examples/tree/main/01_login) | [图文说明](https://gethtmx.com/blog/detail/230) |
 
 ## 适合人群
 
