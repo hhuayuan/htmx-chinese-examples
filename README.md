@@ -17,7 +17,8 @@
 
 | 内容 | GitHub仓库 | 图文说明 |
 | :--- | :--- | :--- |
-| htmx实现用户登录：完整的动态交互 | [GitHub仓库](https://github.com/hhuayuan/htmx-chinese-examples/tree/main/01_login) | [图文说明](https://gethtmx.com/blog/detail/230) |
+| htmx实现用户登录：完整的动态交互 | [GitHub仓库](https://github.com/hhuayuan/htmx-chinese-examples/tree/main/01_login) | [图文教程](https://gethtmx.com/blog/detail/htmx-flask-user-login) |
+| htmx + 原生 CSS 实现 HTML 模态弹出窗口 | [GitHub仓库](https://github.com/hhuayuan/htmx-chinese-examples/tree/main/02_popup) | [图文教程](https://gethtmx.com/blog/detail/htmx-pure-css-modal-popup) |
 
 ## 适合人群
 
@@ -62,3 +63,5 @@ git clone https://github.com/hhuayuan/htmx-chinese-examples.git
 [HTMX 官方文档](https://htmx.org)
 
 [HTMX 中文网](https://gethtmx.com)
+
+[爬虫练习网站](https://spiderbuf.cn)
