@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>htmx 注册示例</title>
+  <script src="/static/htmx2.0.4.min.js"></script>
+  <style>
+    .container{
+        margin: auto;
+        width: 400px;
+    }
+    .message{
+      color: #28a745;
+    }
+    .message.error{
+      color: #dc3545;
+    }
+
+    input{
+        width: 100%;
+        padding: 10px;
+        margin: 20px 0 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button{
+        width: 100%;
+        padding: 10px;
+        background-color: #1E87F0;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>注册账号</h1>
+    <form hx-post="/register" hx-target="#form-messages" hx-swap="innerHTML"  hx-on:htmx:response-error="bad_request(event);">
+      <div>
+          <label for="email">邮箱</label>
+          <input type="email" name="email" id="email"
+          hx-get="/check_email"
+          hx-trigger="keyup changed delay:500ms"
+          hx-target="#email-status"
+          hx-swap="innerHTML"
+          >
+          <div id="email-status" style="margin-bottom: 30px;"></div>
+      </div>
+
+      <div>
+          <label for="password">密码</label>
+          <input type="password" name="password" id="password">
+      </div>
+
+      <button type="submit">注册</button>
+    </form>
+    <div id="form-messages"></div>
+  </div>
+</body>
+<script>
+  // 服务器返回400时触发 hx-on:htmx:responseError
+  function bad_request(event) {
+    htmx.swap("#form-messages", event.detail.xhr.response, {swapStyle: "innerHTML"});
+  }
+</script>
+</html>
