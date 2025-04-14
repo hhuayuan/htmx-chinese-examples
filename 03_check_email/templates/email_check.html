@@ -1,0 +1,5 @@
+{% if exists %}
+  <span class="message error">这个邮箱已被注册</span>
+{% elif request.args.get('email') %}
+  <span class="message">邮箱可用</span>
+{% endif %}
