@@ -20,6 +20,7 @@
 | htmx实现用户登录：完整的动态交互 | [GitHub仓库](https://github.com/hhuayuan/htmx-chinese-examples/tree/main/01_login) | [图文教程](https://gethtmx.com/blog/detail/htmx-flask-user-login) |
 | htmx + 原生 CSS 实现 HTML 模态弹出窗口 | [GitHub仓库](https://github.com/hhuayuan/htmx-chinese-examples/tree/main/02_popup) | [图文教程](https://gethtmx.com/blog/detail/htmx-pure-css-modal-popup) |
 | HTMX 实现用户注册时邮箱地址实时查询可用性 | [GitHub仓库](https://github.com/hhuayuan/htmx-chinese-examples/tree/main/03_check_email) | [图文教程](https://gethtmx.com/blog/detail/htmx-register-email-keyup-changed) |
+| HTMX 实现数据加载时加载中动画 | [GitHub仓库](https://github.com/hhuayuan/htmx-chinese-examples/tree/main/04_loading_indicator) | [图文教程](https://gethtmx.com/blog/detail/htmx-indicator-loading-request) |
 
 ## 适合人群
 
