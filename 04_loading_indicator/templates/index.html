@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>htmx 数据加载中示例</title>
+  <script src="/static/htmx2.0.4.min.js"></script>
+  <style>
+    .loading {
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .loading.htmx-request {
+      opacity: 1;
+    }
+
+    .loading.htmx-request {
+      opacity: 1;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid #ccc;
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <button hx-get="/load"  hx-indicator=".loading">加载</button>
+  <div class="loading">
+    <div class="spinner"></div>
+  </div>
+</body>
+
+
+</html>
