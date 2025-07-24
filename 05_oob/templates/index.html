@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTMX OOB 示例</title>
+  <script src="/static/htmx2.0.4.min.js"></script>
+  <style>
+    div{
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="oob_target1">oob_target1</div>
+  <div id="oob_target2">oob_target2</div>
+  <div id="normal_target">normal_target</div>
+  <button hx-get="/api" hx-target="#normal_target" hx-swap="outerHTML">加载</button>
+</body>
+</html>
