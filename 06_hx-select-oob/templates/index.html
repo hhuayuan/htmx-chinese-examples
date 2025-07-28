@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hx-select-OOB 比对</title>
+  <script src="/static/htmx2.0.4.min.js"></script>
+  <style>
+    div{
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="target1">target1</div>
+  <div id="target2">target2</div>
+  <div id="normal_target">normal_target</div>
+  <button hx-get="/oob" hx-target="#normal_target">OOB</button>
+  <button hx-get="/select" hx-target="#normal_target" hx-select="#target1">Select</button>
+</body>
+</html>
