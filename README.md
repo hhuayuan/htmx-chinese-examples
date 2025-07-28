@@ -17,8 +17,8 @@
 
 | 内容 | 图文教程 |
 | :--- | :--- |
-| 详解 hx-select 与 OOB 的区别及混合使用时的注意事项 | [图文教程](https://gethtmx.com/articles/hx-select-swap-oob-cross)) |
-| 一文读懂 HTMX OOB 带外交换 | [图文教程](https://gethtmx.com/articles/htmx-out-of-band-oob-flask)) |
+| 详解 hx-select 与 OOB 的区别及混合使用时的注意事项 | [图文教程](https://gethtmx.com/articles/hx-select-swap-oob-cross) |
+| 一文读懂 HTMX OOB 带外交换 | [图文教程](https://gethtmx.com/articles/htmx-out-of-band-oob-flask) |
 | HTMX 实现数据加载时加载中动画 | [图文教程](https://gethtmx.com/articles/htmx-indicator-loading-request) |
 | HTMX 实现用户注册时邮箱地址实时查询可用性 | [图文教程](https://gethtmx.com/articles/htmx-register-email-keyup-changed) |
 | htmx + 原生 CSS 实现 HTML 模态弹出窗口 | [图文教程](https://gethtmx.com/articles/htmx-pure-css-modal-popup) |
