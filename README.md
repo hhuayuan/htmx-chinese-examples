@@ -15,13 +15,14 @@
 
 ## 示例内容
 
-| 内容 | GitHub仓库 | 图文说明 |
-| :--- | :--- | :--- |
-| htmx实现用户登录：完整的动态交互 | [GitHub仓库](https://github.com/hhuayuan/htmx-chinese-examples/tree/main/01_login) | [图文教程](https://gethtmx.com/articles/htmx-flask-user-login) |
-| htmx + 原生 CSS 实现 HTML 模态弹出窗口 | [GitHub仓库](https://github.com/hhuayuan/htmx-chinese-examples/tree/main/02_popup) | [图文教程](https://gethtmx.com/articles/htmx-pure-css-modal-popup) |
-| HTMX 实现用户注册时邮箱地址实时查询可用性 | [GitHub仓库](https://github.com/hhuayuan/htmx-chinese-examples/tree/main/03_check_email) | [图文教程](https://gethtmx.com/articles/htmx-register-email-keyup-changed) |
-| HTMX 实现数据加载时加载中动画 | [GitHub仓库](https://github.com/hhuayuan/htmx-chinese-examples/tree/main/04_loading_indicator) | [图文教程](https://gethtmx.com/articles/htmx-indicator-loading-request) |
-| HTMX OOB | [GitHub仓库](https://github.com/hhuayuan/htmx-chinese-examples/tree/main/05_oob) | [图文教程](https://gethtmx.com/articles/htmx-out-of-band-oob-flask)) |
+| 内容 | 图文教程 |
+| :--- | :--- |
+| 详解 hx-select 与 OOB 的区别及混合使用时的注意事项 | [图文教程](https://gethtmx.com/articles/hx-select-swap-oob-cross)) |
+| 一文读懂 HTMX OOB 带外交换 | [图文教程](https://gethtmx.com/articles/htmx-out-of-band-oob-flask)) |
+| HTMX 实现数据加载时加载中动画 | [图文教程](https://gethtmx.com/articles/htmx-indicator-loading-request) |
+| HTMX 实现用户注册时邮箱地址实时查询可用性 | [图文教程](https://gethtmx.com/articles/htmx-register-email-keyup-changed) |
+| htmx + 原生 CSS 实现 HTML 模态弹出窗口 | [图文教程](https://gethtmx.com/articles/htmx-pure-css-modal-popup) |
+| htmx实现用户登录：完整的动态交互 | [图文教程](https://gethtmx.com/articles/htmx-flask-user-login) |
 
 ## 适合人群
 
@@ -61,8 +62,6 @@ git clone https://github.com/hhuayuan/htmx-chinese-examples.git
 欢迎提交 Issue 和 PR，帮助我们完善这个项目！如果你有任何问题或建议，请通过 GitHub Issues 联系我们。
 
 ## 链接
-[GitHub 仓库](https://github.com/hhuayuan/htmx-chinese-examples)
-
 [HTMX 官方文档](https://htmx.org)
 
 [HTMX 中文网](https://gethtmx.com)
