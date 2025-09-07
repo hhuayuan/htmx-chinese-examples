@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>hx-vals</title>
+  <script src="/static/htmx2.0.4.min.js"></script>
+</head>
+
+<body>
+  <div class="selected" id="selected_1">Selected_Value1</div>
+  <div class="selected" id="selected_2">Selected_Value2</div>
+  <div class="selected" id="selected_3">Selected_Value3</div>
+  <button hx-post="/post" hx-vals='js:{"selecteds":getSelectedValues()}'>Submit By JS</button>
+  <button hx-post="/post" hx-vals='js:{...advgetSelectedValues()}'>Submit By Advanced</button>
+</body>
+<script>
+  function getSelectedValues() {
+    let values = [];
+    htmx.findAll('.selected').forEach(el => {
+      values.push(el.innerText);
+    });
+    return JSON.stringify(values);
+  }
+  function advgetSelectedValues() {
+    let values = {};
+    const selectedItems = [...htmx.findAll('.selected')];
+    selectedItems.forEach(item => {
+      values[`${item.id}`] = item.innerText;
+    });
+    return values;
+  }
+</script>
+
+</html>
