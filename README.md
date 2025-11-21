@@ -17,7 +17,6 @@
 
 | 内容 | 图文教程 |
 | :--- | :--- |
-
 | HTMX 增删查改的基本用法 | [HTMX教程](https://gethtmx.com/articles/htmx-flask-curd-crud-example) |
 | 揭秘 HTMX 中 hx-vals 的高级用法与隐藏陷阱 | [HTMX教程](https://gethtmx.com/articles/hx-vals-advanced-json-syntaxerror-uncaught) |
 | 详解 hx-select 与 OOB 的区别及混合使用时的注意事项 | [HTMX教程](https://gethtmx.com/articles/hx-select-swap-oob-cross) |
