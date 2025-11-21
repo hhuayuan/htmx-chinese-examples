@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTMX CURD</title>
+  <script src="/static/htmx2.0.4.min.js"></script>
+  <style>
+  h1{
+      padding: 8px 0;
+      margin: 0;
+  }
+  tr{
+      height: 40px;
+  }
+  td{
+      padding: 8px 16px;
+  }
+  input,button{
+      height: 40px;
+  }
+  .popup-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(240, 240, 240, .8);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transition: .5s ease;
+  }
+
+  .popup-container.active {
+      opacity: 1;
+      pointer-events: auto;
+      transition: .5s ease;
+  }
+
+  .popup-container .popup-box {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      min-width: 400px;
+      border-radius: 8px;
+      background: white;
+      padding: 16px;
+  }
+
+  .required::before{
+      content: "*";
+      color: red;
+      padding-right: 3px;
+  }
+
+  </style>
+</head>
+
+<body>
+    <div>
+        <input type="search" name="keyword" id="keyword">
+        <button hx-get="/search" hx-target="tbody" hx-include="#keyword">查询</button>
+        <button hx-get="/add" hx-target="body" hx-swap="afterbegin">添加</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>Email</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody hx-confirm="确定要删除该记录吗？">
+            {% for item in items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.email }}</td>
+                <td style="display: flex; gap: 32px;">
+                    <a href="#" hx-get="/edit/{{ item.id }}" hx-target="body" hx-swap="afterbegin" hx-confirm="unset">编辑</a>
+                    <a href="#" hx-post="/delete/{{ item.id }}" hx-target="closest tr" hx-swap="outerHTML">删除</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
