@@ -1,0 +1,14 @@
+<div class="popup-container active">
+    <div class="popup-box">
+        <h1>添加用户</h1>
+        <label for="name" class="required">用户名</label>
+        <input type="name" name="name" id="name" required {% if data %}value="{{data.name}}"{% endif %}>
+        <label for="email" class="required">Email</label>
+        <input type="email" name="email" id="email" {% if data %}value="{{data.email}}"{% endif %}>
+        <input type="hidden" name="id" id="id" {% if data %}value="{{data.id}}"{% endif %}>
+        <button hx-post="/post"
+            hx-include="#name,#email,#id"
+            >确定</button>
+            <button onclick="htmx.swap(htmx.find('.popup-container'),'', {swapStyle: 'outerHTML'})">取消</button>
+    </div>
+</div>
