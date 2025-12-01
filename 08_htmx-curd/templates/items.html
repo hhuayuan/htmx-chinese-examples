@@ -4,7 +4,7 @@
     <td>{{ item.email }}</td>
     <td style="display: flex; gap: 32px;">
         <a href="#" hx-get="/edit/{{ item.id }}" hx-target="body" hx-swap="afterbegin" hx-confirm="unset">编辑</a>
-        <a href="#" hx-post="/delete/{{ item.id }}">删除</a>
+        <a href="#" hx-post="/delete/{{ item.id }}" hx-target="closest tr" hx-swap="outerHTML">删除</a>
     </td>
 </tr>
 {% endfor %}
